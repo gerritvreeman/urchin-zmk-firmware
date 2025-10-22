@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
 
 /*  0  1  2  3  4        5  6  7  8  9 */
 /* 10 11 12 13 14       15 16 17 18 19 */
@@ -113,7 +114,7 @@
       bindings = <
         &kp TILDE &kp RBRC  &kp RBKT &kp RPAR &kp DQT               &trans   &trans   &trans   &trans    &kp BSLH
         &kp GRAVE &kp LBRC  &kp LBKT &kp LPAR &kp SQT               &kp LEFT &kp DOWN &kp UP   &kp RIGHT &kp SQT
-        &kp LSFT  &kp LCTL  &kp LALT &kp LGUI &mo 3                 &trans   &kp RGUI &kp RALT &kp RCTL  &kp RSFT
+        &kp LSFT  &kp LCTL  &kp LALT &kp LGUI &mkp MB1              &trans   &kp RGUI &kp RALT &kp RCTL  &kp RSFT
                                               &trans &trans &mo FUN &trans
       >;
     };

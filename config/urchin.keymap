@@ -103,9 +103,9 @@
     num_layer {
       label = "NUM";
       bindings = <
-        &kp TILDE &kp RBRC &kp RBKT &kp RPAR &kp DQT              &kp STAR &kp N7 &kp N8 &kp N9 &kp MINUS
-        &kp GRAVE &kp LBRC &kp LBKT &kp LPAR &kp SQT              &kp FSLH &kp N4 &kp N5 &kp N6 &kp PLUS
-        &kp LSFT  &kp LCTL &kp LALT &kp LGUI &kp BSLH              &kp N0   &kp N1 &kp N2 &kp N3 &kp EQUAL
+        &kp TILDE &kp RBRC &kp RBKT &kp RPAR &kp DQT                 &kp STAR &kp N7 &kp N8 &kp N9 &kp MINUS
+        &kp GRAVE &kp LBRC &kp LBKT &kp LPAR &kp SQT                 &kp FSLH &kp N4 &kp N5 &kp N6 &kp PLUS
+        &kp LSFT  &kp LCTL &kp LALT &kp LGUI &kp BSLH                &kp N0   &kp N1 &kp N2 &kp N3 &kp EQUAL
                                              &trans   &mo FUN &trans &trans
       >;
     };

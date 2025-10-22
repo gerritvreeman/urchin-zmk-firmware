@@ -103,19 +103,19 @@
     num_layer {
       label = "NUM";
       bindings = <
-        &trans   &trans   &trans   &trans   &trans                &mo FUN  &kp N7 &kp N8 &kp N9 &kp MINUS
-        &trans   &trans   &trans   &trans   &trans                &kp FSLH &kp N4 &kp N5 &kp N6 &kp PLUS
-        &kp LSFT &kp LCTL &kp LALT &kp LGUI &trans                &kp N0   &kp N1 &kp N2 &kp N3 &kp EQUAL
-                                            &trans &mo FUN &trans &trans
+        &kp TILDE &kp RBRC &kp RBKT &kp RPAR &kp DQT              &kp STAR &kp N7 &kp N8 &kp N9 &kp MINUS
+        &kp GRAVE &kp LBRC &kp LBKT &kp LPAR &kp SQT              &kp FSLH &kp N4 &kp N5 &kp N6 &kp PLUS
+        &kp LSFT  &kp LCTL &kp LALT &kp LGUI &kp BSLH              &kp N0   &kp N1 &kp N2 &kp N3 &kp EQUAL
+                                             &trans &mo FUN &trans &trans
       >;
     };
     nav_layer {
       label = "NAV";
       bindings = <
-        &kp TILDE &kp RBRC  &kp RBKT &kp RPAR &kp DQT               &trans   &trans   &trans   &trans    &kp BSLH
-        &kp GRAVE &kp LBRC  &kp LBKT &kp LPAR &kp SQT               &kp LEFT &kp DOWN &kp UP   &kp RIGHT &kp SQT
-        &kp LSFT  &kp LCTL  &kp LALT &kp LGUI &mkp MB1              &trans   &kp RGUI &kp RALT &kp RCTL  &kp RSFT
-                                              &trans &trans &mo FUN &trans
+        &trans   &trans   &trans   &trans   &msc SCRL_UP                  &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans
+        &mkp MB5 &mkp MB3 &mkp MB2 &mkp MB1 &mkp MB4                      &kp LEFT       &kp DOWN     &kp UP         &kp RIGHT       &trans
+        &kp LSFT &kp LCTL &kp LALT &kp LGUI &msc SCRL_DOWN                &trans         &kp RGUI     &kp RALT       &kp RCTL        &kp RSFT
+                                            &trans         &trans &mo FUN &trans
       >;
     };
     fun_layer {

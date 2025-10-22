@@ -88,7 +88,7 @@
         &kp Q       &kp W       &kp E       &kp R       &kp T                    &kp Y &kp U       &kp I           &kp O         &kp P
         &kp A       &kp S       &kp D       &kp F       &kp G                    &kp H &kp J       &kp K           &kp L         &kp SEMI
         &hml LSFT Z &hml LCTL X &hml LALT C &hml LGUI V &kp B                    &kp N &hmr RGUI M &hmr RALT COMMA &hmr RCTL DOT &hmr RSFT FSLH
-                                                        &kp LSFT &mt NAV &mo NUM &kp SPACE
+                                                        &kp LSFT &mo NAV &mo NUM &kp SPACE
       >;
     };
     colemak_dh_layer {

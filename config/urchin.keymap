@@ -113,7 +113,7 @@
       label = "NAV";
       bindings = <
         &trans   &mkp MB2       &mmv MOVE_UP     &mkp MB1        &mkp MB3                &trans   &trans   &trans   &trans    &trans
-        &tranr   &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &mkp MB4                &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans
+        &trans   &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &mkp MB4                &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans
         &kp LSFT &kp LCTL       &kp LALT         &kp LGUI        &msc MB5                &trans   &kp RGUI &kp RALT &kp RCTL  &kp RSFT
                                                                  &trans   &trans &mo FUN &trans
       >;

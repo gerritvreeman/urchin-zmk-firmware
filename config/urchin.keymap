@@ -103,28 +103,28 @@
     num_layer {
       label = "NUM";
       bindings = <
-        &kp TILDE &kp RBRC &kp RBKT &kp RPAR &kp DQT                 &kp STAR &kp N7 &kp N8 &kp N9 &kp MINUS
-        &kp GRAVE &kp LBRC &kp LBKT &kp LPAR &kp SQT                 &kp FSLH &kp N4 &kp N5 &kp N6 &kp PLUS
-        &kp LSFT  &kp LCTL &kp LALT &kp LGUI &kp BSLH                &kp N0   &kp N1 &kp N2 &kp N3 &kp EQUAL
+        &kp TILDE &kp RBRC &kp RBKT &kp RPAR &kp DQT                 &kp STAR &kp N7       &kp N8       &kp N9       &kp MINUS
+        &kp GRAVE &kp LBRC &kp LBKT &kp LPAR &kp SQT                 &kp FSLH &kp N4       &kp N5       &kp N6       &kp PLUS
+        &kp LSFT  &kp LCTL &kp LALT &kp LGUI &kp BSLH                &kp N0   &hmr RGUI N1 &hmr RALT N2 &hmr RCTL N3 &hmr RSFT EQUAL
                                              &trans   &mo FUN &trans &trans
       >;
     };
     nav_layer {
       label = "NAV";
       bindings = <
-        &trans   &trans   &trans   &trans   &msc SCRL_DOWN                &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans
-        &mkp MB5 &mkp MB3 &mkp MB2 &mkp MB1 &mkp MB4                      &kp LEFT       &kp DOWN       &kp UP       &kp RIGHT       &trans
-        &kp LSFT &kp LCTL &kp LALT &kp LGUI &msc SCRL_UP                  &trans         &kp RGUI       &kp RALT     &kp RCTL        &kp RSFT
-                                            &trans         &trans &mo FUN &trans
+        &trans   &mkp MB2       &mmv MOVE_UP     &mkp MB1        &mkp MB3                &trans   &trans   &trans   &trans    &trans
+        &tranr   &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &mkp MB4                &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans
+        &kp LSFT &kp LCTL       &kp LALT         &kp LGUI        &msc MB5                &trans   &kp RGUI &kp RALT &kp RCTL  &kp RSFT
+                                                                 &trans   &trans &mo FUN &trans
       >;
     };
     fun_layer {
       label = "FUN";
       bindings = <
-        &kp F10 &kp F7 &kp F8 &kp F9 &bt BT_SEL 0               &trans     &kp C_BRI_DN &kp C_BRI_UP &trans     &kp C_PP
-        &kp F11 &kp F4 &kp F5 &kp F6 &bt BT_SEL 1               &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
-        &kp F12 &kp F1 &kp F2 &kp F3 &bt BT_CLR                 &trans     &kp C_MUTE   &trans       &to BASE   &to COL
-                                     &bootloader  &trans &trans &bootloader
+        &kp F10 &kp F7 &kp F8 &kp F9 &bt BT_NXT                &trans     &kp C_BRI_DN &kp C_BRI_UP &trans     &kp C_PP
+        &kp F11 &kp F4 &kp F5 &kp F6 &bt BT_PRV                &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
+        &kp F12 &kp F1 &kp F2 &kp F3 &bt BT_CLR                &trans     &kp C_MUTE   &trans       &to BASE   &to COL
+                                     &bootloader &trans &trans &bootloader
       >;
     };
   };

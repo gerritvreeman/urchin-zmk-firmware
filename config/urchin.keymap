@@ -110,6 +110,7 @@
         &mkp MB4 &kp LCTL       &kp LALT         &kp LGUI        &trans                         &kp N0   &hmr RGUI N1 &hmr RALT N2 &hmr RCTL N3 &hmr RSFT EQUAL
                                                                  &trans         &mkp MB1 &trans &trans
       >;
+    };
     nav_layer {
       label = "SYM-NAV";
       bindings = <
@@ -118,6 +119,7 @@
         &kp LSFT  &kp LCTL &kp LALT &kp LGUI &kp BSLH                &trans   &kp RGUI &kp RALT &kp RCTL  &kp RSFT
                                              &trans   &trans &mo FUN &trans
       >;
+    };
     fun_layer {
       label = "FUN";
       bindings = <

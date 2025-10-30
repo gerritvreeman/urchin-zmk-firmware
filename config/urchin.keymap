@@ -103,7 +103,7 @@
       >;
     };
     num_layer {
-      label = "NAV-NUM";
+      label = "NAVNUM";
       bindings = <
         &mkp MB2 &msc SCRL_LEFT &mmv MOVE_UP     &msc SCRL_RIGHT &msc SCRL_UP                   &kp STAR &kp N7       &kp N8       &kp N9       &kp MINUS
         &mkp MB3 &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &msc SCRL_DOWN                 &kp FSLH &kp N4       &kp N5       &kp N6       &kp PLUS
@@ -112,7 +112,7 @@
       >;
     };
     nav_layer {
-      label = "SYM-NAV";
+      label = "SYMNAV";
       bindings = <
         &kp TILDE &kp RBRC &kp RBKT &kp RPAR &kp DQT                 &trans   &trans   &trans   &trans    &trans
         &kp GRAVE &kp LBRC &kp LBKT &kp LPAR &kp SQT                 &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans

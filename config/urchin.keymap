@@ -55,30 +55,36 @@
       key-positions = <17 18>;
       bindings = <&kp RET>;
     };
-  };
 
-  behaviors {
-    hml: home_row_mod_left {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      flavor = "balanced";
-      require-prior-idle-ms = <125>;
-      tapping-term-ms       = <225>;
-      quick-tap-ms          = <175>;
-      bindings = <&kp>, <&kp>;
-      hold-trigger-key-positions = <RH_KEYS T_KEYS>;
-      hold-trigger-on-release;
+    combo_lalt {
+      timeout-ms = <25>;
+      key-positions = <10 13>;
+      bindings = <&kp LALT>;
     };
-    hmr: home_row_mod_right {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      flavor = "balanced";
-      require-prior-idle-ms = <125>;
-      tapping-term-ms       = <225>;
-      quick-tap-ms          = <175>;
-      bindings = <&kp>, <&kp>;
-      hold-trigger-key-positions = <LH_KEYS T_KEYS>;
-      hold-trigger-on-release;
+    combo_lctl {
+      timeout-ms = <25>;
+      key-positions = <11 13>;
+      bindings = <&kp LCTL>;
+    };
+    combo_lgui {
+      timeout-ms = <25>;
+      key-positions = <12 13>;
+      bindings = <&kp LGUI>;
+    };
+    combo_rgui {
+      timeout-ms = <25>;
+      key-positions = <16 17>;
+      bindings = <&kp RGUI>;
+    };
+    combo_rctl {
+      timeout-ms = <25>;
+      key-positions = <16 18>;
+      bindings = <&kp RCTL>;
+    };
+    combo_ralt {
+      timeout-ms = <25>;
+      key-positions = <16 19>;
+      bindings = <&kp RALT>;
     };
   };
 
@@ -89,7 +95,7 @@
       bindings = <
         &kp Q       &kp W       &kp E       &kp R       &kp T                    &kp Y &kp U       &kp I           &kp O         &kp P
         &kp A       &kp S       &kp D       &kp F       &kp G                    &kp H &kp J       &kp K           &kp L         &kp SEMI
-        &hml LSFT Z &hml LCTL X &hml LALT C &hml LGUI V &kp B                    &kp N &hmr RGUI M &hmr RALT COMMA &hmr RCTL DOT &hmr RSFT FSLH
+        &kp Z       &kp X       &kp C       &kp V       &kp B                    &kp N &kp M       &kp COMMA       &kp DOT       &kp FSLH
                                                         &kp LSFT &mo NAV &mo NUM &kp SPACE
       >;
     };
@@ -98,7 +104,7 @@
       bindings = <
         &kp Q       &kp W       &kp F       &kp P       &kp B                    &kp J &kp L       &kp U           &kp Y         &kp SEMI
         &kp A       &kp R       &kp S       &kp T       &kp G                    &kp M &kp N       &kp E           &kp I         &kp O
-        &hml LSFT Z &hml LCTL X &hml LALT C &hml LGUI D &kp V                    &kp K &hmr RGUI H &hmr RALT COMMA &hmr RCTL DOT &hmr RSFT FSLH
+        &kp Z       &kp X       &kp C       &kp D       &kp V                    &kp K &kp H       &kp COMMA       &kp DOT       &kp FSLH
                                                         &kp LSFT &mo NAV &mo NUM &kp SPACE
       >;
     };
@@ -107,7 +113,7 @@
       bindings = <
        &kp TILDE &kp RBRC &kp RBKT &kp RPAR &kp DQT                 &kp STAR &kp N7       &kp N8       &kp N9       &kp MINUS
        &kp GRAVE &kp LBRC &kp LBKT &kp LPAR &kp SQT                 &kp FSLH &kp N4       &kp N5       &kp N6       &kp PLUS
-       &kp LSFT  &kp LCTL &kp LALT &kp LGUI &kp BSLH                &kp N0   &hmr RGUI N1 &hmr RALT N2 &hmr RCTL N3 &hmr RSFT EQUAL
+       &kp LSFT  &kp LCTL &kp LALT &kp LGUI &kp BSLH                &kp N0   &kp N1       &kp N2       &kp N3       &kp EQUAL
                                             &trans   &mo FUN &trans &trans
       >;
     };
@@ -116,17 +122,17 @@
       bindings = <
       &mkp MB4 &msc SCRL_LEFT &mmv MOVE_UP     &msc SCRL_RIGHT &msc SCRL_UP                  &trans   &trans   &trans   &trans    &trans
       &mkp MB1 &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &msc SCRL_DOWN                &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans
-      &mkp MB2 &kp LCTL       &kp LALT         &kp LGUI        &trans                        &trans   &kp RGUI &kp RALT &kp RCTL  &kp RSFT
+      &mkp MB2 &trans         &trans           &trans          &trans                        &trans   &trans   &trans   &trans    &trans
                                                                &trans         &trans &mo FUN &trans
       >;
     };
     fun_layer {
       label = "FUN";
       bindings = <
-        &kp F10 &kp F7 &kp F8 &kp F9 &bt BT_NXT                &trans     &kp C_BRI_DN &kp C_BRI_UP &trans     &kp C_PP
-        &kp F11 &kp F4 &kp F5 &kp F6 &bt BT_PRV                &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
-        &kp F12 &kp F1 &kp F2 &kp F3 &bt BT_CLR                &trans     &kp C_MUTE   &trans       &to BASE   &to COL
-                                     &bootloader &trans &trans &bootloader
+        &kp F10     &kp F7 &kp F8 &kp F9 &bt BT_NXT               &trans     &kp C_BRI_DN &kp C_BRI_UP &trans     &kp C_PP
+        &kp F11     &kp F4 &kp F5 &kp F6 &bt BT_PRV               &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
+        &bootloader &kp F1 &kp F2 &kp F3 &bt BT_CLR               &bootloader &kp C_MUTE   &trans       &to BASE   &to COL
+                                         &trans     &trans &trans &trans
       >;
     };
   };

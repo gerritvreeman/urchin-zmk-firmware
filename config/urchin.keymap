@@ -173,7 +173,7 @@
       bindings = <
         &kp F10     &kp F7 &kp F8 &kp F9 &bt BT_NXT               &trans      &kp C_BRI_DN &kp C_BRI_UP &trans     &kp C_PP
         &kp F11     &kp F4 &kp F5 &kp F6 &bt BT_PRV               &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
-        &bootloader &kp F1 &kp F2 &kp F3 &bt BT_CLR               &trans      &kp C_MUTE   &to BASED    &to COLE   &bootloader
+        &bootloader &kp F1 &kp F2 &kp F3 &bt BT_CLR               &trans      &kp C_MUTE   &to BASE     &to COLE   &bootloader
                                          &trans     &trans &trans &trans
       >;
     };

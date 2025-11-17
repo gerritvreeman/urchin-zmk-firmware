@@ -22,7 +22,7 @@
 #define T_KEYS 30 31 32 33
 
 #define BASE 0
-#define COL 1
+#define COLE 1
 #define NUM 2
 #define NAV 3
 #define FUN 4

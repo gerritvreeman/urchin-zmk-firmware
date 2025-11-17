@@ -31,7 +31,7 @@
   combos {
     compatible = "zmk,combos";
     combo_esc {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <1 2>;
       bindings = <&kp ESC>;
     };
@@ -41,12 +41,12 @@
       bindings = <&kp TAB>;
     };
     combo_bspc {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <7 8>;
       bindings = <&kp BSPC>;
     };
     combo_del {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <8 9>;
       bindings = <&kp DEL>;
     };
@@ -57,34 +57,76 @@
     };
 
     combo_lalt {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <10 13>;
       bindings = <&kp LALT>;
     };
     combo_lctl {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <11 13>;
       bindings = <&kp LCTL>;
     };
     combo_lgui {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <12 13>;
       bindings = <&kp LGUI>;
     };
     combo_rgui {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <16 17>;
       bindings = <&kp RGUI>;
     };
     combo_rctl {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <16 18>;
       bindings = <&kp RCTL>;
     };
     combo_ralt {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <16 19>;
       bindings = <&kp RALT>;
+    };
+
+    combo_lalt_lctl {
+      timeout-ms = <35>;
+      key-positions = <10 11 13>;
+      bindings = <&kp LA(LCTL)>;
+    };
+    combo_lalt_lgui {
+      timeout-ms = <35>;
+      key-positions = <10 12 13>;
+      bindings = <&kp LA(LGUI)>;
+    };
+    combo_lalt_lctl_lgui {
+      timeout-ms = <35>;
+      key-positions = <10 11 12 13>;
+      bindings = <&kp LA(LC(LGUI))>;
+    };
+    combo_lctl_lgui {
+      timeout-ms = <35>;
+      key-positions = <11 12 13>;
+      bindings = <&kp LC(LGUI)>;
+    };
+
+    combo_ralt_rctl {
+      timeout-ms = <35>;
+      key-positions = <16 18 19>;
+      bindings = <&kp RA(RCTL)>;
+    };
+    combo_ralt_rgui {
+      timeout-ms = <35>;
+      key-positions = <16 17 19>;
+      bindings = <&kp RA(RGUI)>;
+    };
+    combo_ralt_rctl_gui {
+      timeout-ms = <35>;
+      key-positions = <16 17 18 19>;
+      bindings = <&kp RA(RC(RGUI))>;
+    };
+    combo_rctl_rgui {
+      timeout-ms = <35>;
+      key-positions = <16 17 18>;
+      bindings = <&kp RC(RGUI)>;
     };
   };
 
@@ -129,9 +171,9 @@
     fun_layer {
       label = "FUN";
       bindings = <
-        &kp F10     &kp F7 &kp F8 &kp F9 &bt BT_NXT               &trans     &kp C_BRI_DN &kp C_BRI_UP &trans     &kp C_PP
+        &kp F10     &kp F7 &kp F8 &kp F9 &bt BT_NXT               &trans      &kp C_BRI_DN &kp C_BRI_UP &trans     &kp C_PP
         &kp F11     &kp F4 &kp F5 &kp F6 &bt BT_PRV               &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
-        &bootloader &kp F1 &kp F2 &kp F3 &bt BT_CLR               &bootloader &kp C_MUTE   &trans       &to BASE   &to COL
+        &bootloader &kp F1 &kp F2 &kp F3 &bt BT_CLR               &trans      &kp C_MUTE   &to BASED    &to COLE   &bootloader
                                          &trans     &trans &trans &trans
       >;
     };

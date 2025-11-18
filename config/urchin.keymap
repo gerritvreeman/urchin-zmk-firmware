@@ -37,7 +37,7 @@
     };
     combo_tab {
       timeout-ms = <25>;
-      key-positions = <11 12>;
+      key-positions = <21 22>;
       bindings = <&kp TAB>;
     };
     combo_bspc {
@@ -52,18 +52,18 @@
     };
     combo_ret {
       timeout-ms = <25>;
-      key-positions = <17 18>;
+      key-positions = <27 28>;
       bindings = <&kp RET>;
     };
 
     combo_lalt {
       timeout-ms = <35>;
-      key-positions = <10 13>;
+      key-positions = <10 11>;
       bindings = <&kp LALT>;
     };
     combo_lctl {
       timeout-ms = <35>;
-      key-positions = <11 13>;
+      key-positions = <11 12>;
       bindings = <&kp LCTL>;
     };
     combo_lgui {
@@ -78,18 +78,18 @@
     };
     combo_rctl {
       timeout-ms = <35>;
-      key-positions = <16 18>;
+      key-positions = <17 18>;
       bindings = <&kp RCTL>;
     };
     combo_ralt {
       timeout-ms = <35>;
-      key-positions = <16 19>;
+      key-positions = <18 19>;
       bindings = <&kp RALT>;
     };
 
     combo_lalt_lctl {
       timeout-ms = <35>;
-      key-positions = <10 11 13>;
+      key-positions = <10 11 12>;
       bindings = <&kp LA(LCTL)>;
     };
     combo_lalt_lgui {
@@ -110,7 +110,7 @@
 
     combo_ralt_rctl {
       timeout-ms = <35>;
-      key-positions = <16 18 19>;
+      key-positions = <17 18 19>;
       bindings = <&kp RA(RCTL)>;
     };
     combo_ralt_rgui {

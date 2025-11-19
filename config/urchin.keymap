@@ -123,7 +123,7 @@
     combo_ralt_rctl_gui {
       timeout-ms = <35>;
       key-positions = <16 17 18 19>;
-      bindings = <&kp RA(RC(RGUI) &mo RM)>;
+      bindings = <&kp RA(RC(RGUI)) &mo RM>;
     };
     combo_rctl_rgui {
       timeout-ms = <35>;

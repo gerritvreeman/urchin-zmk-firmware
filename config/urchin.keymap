@@ -26,38 +26,8 @@
 #define NUM 2
 #define NAV 3
 #define FUN 4
-#define MOD 5
 
 / {
-  combos {
-    compatible = "zmk,combos";
-    combo_esc {
-      timeout-ms = <35>;
-      key-positions = <1 2>;
-      bindings = <&kp ESC>;
-    };
-    combo_tab {
-      timeout-ms = <25>;
-      key-positions = <21 22>;
-      bindings = <&kp TAB>;
-    };
-    combo_bspc {
-      timeout-ms = <35>;
-      key-positions = <7 8>;
-      bindings = <&kp BSPC>;
-    };
-    combo_del {
-      timeout-ms = <35>;
-      key-positions = <8 9>;
-      bindings = <&kp DEL>;
-    };
-    combo_ret {
-      timeout-ms = <25>;
-      key-positions = <27 28>;
-      bindings = <&kp RET>;
-    };
-  };
-  
   behaviors {
     hml: home_row_mod_left {
       compatible = "zmk,behavior-hold-tap";
@@ -83,61 +53,75 @@
     };
   };
 
+  combos {
+    compatible = "zmk,combos";
+    combo_esc {
+      timeout-ms = <25>;
+      key-positions = <1 2>;
+      bindings = <&kp ESC>;
+    };
+    combo_tab {
+      timeout-ms = <25>;
+      key-positions = <21 22>;
+      bindings = <&kp TAB>;
+    };
+    combo_bspc {
+      timeout-ms = <25>;
+      key-positions = <7 8>;
+      bindings = <&kp BSPC>;
+    };
+    combo_ret {
+      timeout-ms = <25>;
+      key-positions = <27 28>;
+      bindings = <&kp RET>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
     default_layer {
       label = "BASE";
       bindings = <
-        &kp Q       &kp W       &kp E       &kp R       &kp T                     &kp Y     &kp U       &kp I       &kp O       &kp P
-        &hml LCTL A &hml LALT S &hml LGUI D &hml LSFT F &kp G                     &kp H     &hmr RSFT J &hmr RGUI K &hmr RALT L &hmr RCTL SEMI
-        &kp Z       &kp X       &kp C       &kp V       &kp B                     &kp N     &kp M       &kp COMMA   &kp DOT     &kp FSLH
+        &kp       Q &kp       W &kp       E &kp       R &kp T                     &kp Y     &kp       U &kp       I     &kp       O   &kp       P
+        &hml LCTL A &hml LALT S &hml LGUI D &hml LSFT F &kp G                     &kp H     &hmr RSFT J &hmr RGUI K     &hmr RALT L   &hmr RCTL SEMI
+        &kp       Z &kp       X &kp       C &kp       V &kp B                     &kp N     &kp       M &kp       COMMA &kp       DOT &kp       FSLH
                                                         &kp SPACE &mo NAV &mo NUM &kp SPACE
-
-        /* &kp Q       &kp W       &kp E       &kp R       &kp T                     &kp Y     &kp U       &kp I           &kp O         &kp P */
-        /* &kp A       &kp S       &kp D       &kp F       &kp G                     &kp H     &kp J       &kp K           &kp L         &kp SEMI */
-        /* &hml LCTL Z &hml LALT X &hml LGUI C &hml LSFT V &kp B                     &kp N     &hmr RSFT M &hmr RGUI COMMA &hmr RALT DOT &hmr RCTL FSLH */
-                                                        /* &kp SPACE &mo NAV &mo NUM &kp SPACE */
       >;
     };
     colemak_dh_layer {
       label = "COLE";
       bindings = <
-        &kp Q       &kp W       &kp F       &kp P       &kp B                     &kp J     &kp L       &kp U           &kp Y         &kp SEMI
+        &kp       Q &kp       W &kp       F &kp       P &kp B                     &kp J     &kp       L &kp       U     &kp       Y   &kp       ;
         &hml LCTL A &hml LALT R &hml LGUI S &hml LSFT T &kp G                     &kp M     &hmr RSFT N &hmr RGUI E     &hmr RALT I   &hmr RCTL O
-        &kp Z       &kp X       &kp C       &kp D       &kp V                     &kp K     &kp H       &kp COMMA       &kp DOT       &kp FSLH
+        &kp       Z &kp       X &kp       C &kp       D &kp V                     &kp K     &kp       H &kp       COMMA &kp       DOT &kp       FSLH
                                                         &kp SPACE &mo NAV &mo NUM &kp SPACE
-
-        /* &kp Q       &kp W       &kp F       &kp P       &kp B                    &kp J     &kp L       &kp U           &kp Y         &kp SEMI */
-        /* &kp A       &kp R       &kp S       &kp T       &kp G                    &kp M     &kp N       &kp E           &kp I         &kp O */
-        /* &hml LCTL Z &hml LALT X &hml LGUI C &hml LSFT D &kp V                    &kp K     &hmr RSFT H &hmr RGUI COMMA &hmr RALT DOT &hmr RCTL FSLH */
-        /*                                                 &kp LSFT &mo NAV &mo NUM &kp SPACE */
       >;
     };
     num_layer {
       label = "NUM";
       bindings = <
-        &kp TILDE &kp RBRC &kp RBKT &kp RPAR &kp DQT                 &kp STAR &kp N7       &kp N8       &kp N9       &kp MINUS
-        &kp GRAVE &kp LBRC &kp LBKT &kp LPAR &kp SQT                 &kp FSLH &kp N4       &kp N5       &kp N6       &kp PLUS
-        &kp LCTL  &kp LALT &kp LGUI &kp LSFT &kp BSLH                &kp N0   &hmr RSFT N1 &hmr RGUI N2 &hmr RALT N3 &hmr RCTL EQUAL
-                                             &trans   &mo FUN &trans &trans
+        &kp       TILDE &kp       RBRC &kp       RBKT &kp       RPAR &kp DQT               &kp STAR &kp       N7 &kp       N8 &kp       N9 &kp       MINUS
+        &hml LCTL GRAVE &hml LALT LBRC &hml LGUI LBKT &hml LSFT LPAR &kp SQT               &kp FSLH &hmr RSFT N4 &hmr RGUI N5 &hmr RALT N6 &hmr RCTL N0
+        &trans          &trans         &trans         &trans         &trans                &kp DOT  &kp       N1 &kp       N2 &kp       N3 &kp       EQUAL
+                                                                     &trans &mo FUN &trans &trans
       >;
     };
     nav_layer {
       label = "NAV";
       bindings = <
-        &kp ESC  &mkp MB2       &mmv MOVE_UP     &mkp MB1        &msc SCRL_UP                  &trans   &trans   &trans   &trans    &kp BSPC
-        &kp TAB  &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &msc SCRL_DOWN                &kp LEFT &kp DOWN &kp UP   &kp RIGHT &kp RET
-        &kp LCTL &kp LALT       &kp LGUI         &kp LSFT        &trans                        &trans   &kp RSFT &kp RGUI &kp RALT  &kp RCTL
-                                                                 &trans         &trans &mo FUN &trans
+        &trans   &trans   &trans   &trans   &trans                &msc SCRL_LEFT   &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans
+        &kp LCTL &kp LALT &kp LGUI &kp LSFT &trans                &kp  LEFT        &kp  DOWN      &kp  UP      &kp  RIGHT      &trans
+        &trans   &trans   &trans   &trans   &trans                &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mkp MB1
+                                            &trans &trans &mo FUN &trans
       >;
     };
     fun_layer {
       label = "FUN";
       bindings = <
-        &kp F10     &kp F7 &kp F8 &kp F9 &bt BT_NXT               &trans      &kp C_BRI_DN &kp C_BRI_UP &trans     &kp C_PP
-        &kp F11     &kp F4 &kp F5 &kp F6 &bt BT_PRV               &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
-        &bootloader &kp F1 &kp F2 &kp F3 &bt BT_CLR               &trans      &kp C_MUTE   &to BASE     &to COLE   &bootloader
-                                         &trans     &trans &trans &trans
+        &kp F12 &kp F7 &kp F8 &kp F9 &trans                    &bt BT_CLR  &bt BT_NEXT  &bt BT_PREV  &trans     &trans
+        &kp F11 &kp F4 &kp F5 &kp F6 &trans                    &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP
+        &kp F10 &kp F1 &kp F2 &kp F3 &bootloader               &bootloader &kp C_MUTE   &to BASE     &to COLE   &trans
+                                     &trans      &trans &trans &trans
       >;
     };
   };

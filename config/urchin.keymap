@@ -91,7 +91,7 @@
     colemak_dh_layer {
       label = "COLE";
       bindings = <
-        &kp       Q &kp       W &kp       F &kp       P &kp B                     &kp J     &kp       L &kp       U     &kp       Y   &kp       ;
+        &kp       Q &kp       W &kp       F &kp       P &kp B                     &kp J     &kp       L &kp       U     &kp       Y   &kp       SEMI
         &hml LCTL A &hml LALT R &hml LGUI S &hml LSFT T &kp G                     &kp M     &hmr RSFT N &hmr RGUI E     &hmr RALT I   &hmr RCTL O
         &kp       Z &kp       X &kp       C &kp       D &kp V                     &kp K     &kp       H &kp       COMMA &kp       DOT &kp       FSLH
                                                         &kp SPACE &mo NAV &mo NUM &kp SPACE

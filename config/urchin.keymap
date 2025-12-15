@@ -24,9 +24,9 @@
 #define BASE 0
 #define COLE 1
 #define NAV 2
-#define MOS 3
-#define SYM 4
-#define NUM 5
+#define SYM 3
+#define NUM 4
+#define MOS 5
 #define FUN 6
 
 / {
@@ -96,9 +96,9 @@
     symbol_layer {
       label = "SYM";
       bindings = <
-        &kp TILDE &kp LBRC &kp RBRC &kp MINUS &kp EQUAL                &trans  &trans   &trans   &trans   &trans
-        &kp GRAVE &kp LPAR &kp RPAR &kp SQT   &trans                   &trans  &sk RSFT &sk RGUI &sk RALT &sk RCTL
-        &kp BSLH  &kp LBKT &kp RBKT &trans    &trans                   &trans  &trans   &trans   &trans   &bootloader
+        &kp TILDE &kp LBRC &kp RBRC &kp MINUS &kp PLUS                 &trans  &trans   &trans   &trans   &trans
+        &kp GRAVE &kp LPAR &kp RPAR &kp SQT   &kp DQT                  &trans  &sk RSFT &sk RGUI &sk RALT &sk RCTL
+        &kp BSLH  &kp LBKT &kp RBKT &kp UNDER &kp EQUAL                &trans  &trans   &trans   &trans   &bootloader
                                               &trans    &mo NUM &trans &trans
       >;
     };

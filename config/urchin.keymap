@@ -23,44 +23,83 @@
 
 #define BASE 0
 #define COLE 1
-#define NAV 2
-#define SYM 3
-#define NUM 4
-#define MOS 5
-#define FUN 6
+#define NUM 2
+#define NAV 3
+#define FUN 4
 
 / {
   combos {
     compatible = "zmk,combos";
-    combo_esc {
+    combo_lalt {
       timeout-ms = <25>;
-      key-positions = <1 2>;
-      bindings = <&kp ESC>;
+      key-positions = <10 11>;
+      bindings = <&sk LALT>;
     };
-    combo_tab {
+    combo_lctl {
       timeout-ms = <25>;
-      key-positions = <21 22>;
-      bindings = <&kp TAB>;
+      key-positions = <11 12>;
+      bindings = <&sk LCTL>;
     };
-    combo_bspc {
+    combo_lgui {
       timeout-ms = <25>;
-      key-positions = <7 8>;
-      bindings = <&kp BSPC>;
+      key-positions = <12 13>;
+      bindings = <&sk LGUI>;
     };
-    combo_ret {
+    combo_rgui {
       timeout-ms = <25>;
-      key-positions = <27 28>;
-      bindings = <&kp RET>;
+      key-positions = <16 17>;
+      bindings = <&sk RGUI>;
     };
-    combo_mos {
-      timeout-ms = <35>;
-      key-positions = <30 31>;
-      bindings = <&mo MOS>;
+    combo_rctl{
+      timeout-ms = <25>;
+      key-positions = <17 18>;
+      bindings = <&sk RCTL>;
     };
-    combo_fun {
-      timeout-ms = <35>;
-      key-positions = <30 33>;
-      bindings = <&mo FUN>;
+    combo_ralt {
+      timeout-ms = <25>;
+      key-positions = <18 19>;
+      bindings = <&sk RALT>;
+    };
+
+    combo_lalt_lctl {
+      timeout-ms = <25>;
+      key-positions = <10 11 12>;
+      bindings = <&sk LALT>, <&sk LCTL>;
+    };
+    combo_lalt_lgui {
+      timeout-ms = <25>;
+      key-positions = <10 11 13>;
+      bindings = <&sk LALT>, <&sk LGUI>;
+    };
+    combo_lctl_lgui {
+      timeout-ms = <25>;
+      key-positions = <11 12 13>;
+      bindings = <&sk LCTL>, <&sk LGUI>;
+    };
+    combo_lalt_lctl_lgui {
+      timeout-ms = <25>;
+      key-positions = <10 11 12 13>;
+      bindings = <&sk LALT>, <&sk LCTL>, <&sk LGUI>;
+    };
+    combo_ralt_rctl {
+      timeout-ms = <25>;
+      key-positions = <17 18 19>;
+      bindings = <&sk RALT>, <&sk RCTL>;
+    };
+    combo_ralt_rgui {
+      timeout-ms = <25>;
+      key-positions = <16 18 19>;
+      bindings = <&sk RALT>, <&sk RGUI>;
+    };
+    combo_rctl_rgui {
+      timeout-ms = <25>;
+      key-positions = <16 17 18>;
+      bindings = <&sk RCTL>, <&sk RGUI>;
+    };
+    combo_ralt_rctl_rgui {
+      timeout-ms = <25>;
+      key-positions = <16 17 18 19>;
+      bindings = <&sk RALT>, <&sk RCTL>, <&sk RGUI>;
     };
   };
 
@@ -69,64 +108,71 @@
     default_layer {
       label = "BASE";
       bindings = <
-        &kp Q &kp W &kp E &kp R &kp T                     &kp Y     &kp U &kp I     &kp O   &kp P
-        &kp A &kp S &kp D &kp F &kp G                     &kp H     &kp J &kp K     &kp L   &kp SEMI
-        &kp Z &kp X &kp C &kp V &kp B                     &kp N     &kp M &kp COMMA &kp DOT &kp FSLH
-                                &kp SPACE &mo NAV &mo SYM &kp SPACE
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp Q           &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &kp P
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp A           &kp S           &kp D           &kp F           &kp G                                           &kp H           &kp J           &kp K           &kp L           &kp SEMI
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp Z           &kp X           &kp C           &kp V           &kp B                                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————| */
+                                                                        &sk LSFT        &lt NAV BSPC    &lt NUM RET     &kp SPACE
+    /*                                                                 |———————————————|———————————————|———————————————|———————————————|                                                                 */
       >;
     };
     colemak_dh_layer {
       label = "COLE";
       bindings = <
-        &kp Q &kp W &kp F &kp P &kp B                     &kp J     &kp L &kp U     &kp Y   &kp SEMI
-        &kp A &kp R &kp S &kp T &kp G                     &kp M     &kp N &kp E     &kp I   &kp O
-        &kp Z &kp X &kp C &kp D &kp V                     &kp K     &kp H &kp COMMA &kp DOT &kp FSLH
-                                &kp SPACE &mo NAV &mo SYM &kp SPACE
-      >;
-    };
-    navigation_layer {
-      label = "NAV";
-      bindings = <
-        &trans      &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_VOL_UP                &kp ESC &kp HOME  &kp UP   &kp END   &kp BSPC
-        &sk LCTL    &sk LALT   &sk LGUI   &sk LSFT   &kp C_MUTE                  &kp TAB &kp LEFT  &kp DOWN &kp RIGHT &kp RET
-        &bootloader &bt BT_PRV &bt BT_CLR &bt BT_NXT &kp C_VOL_DN                &kp TAB &kp PG_UP &trans   &kp PG_DN &kp DEL
-                                                     &trans       &trans &mo NUM &trans
-      >;
-    };
-    symbol_layer {
-      label = "SYM";
-      bindings = <
-        &kp TILDE &kp LBRC &kp RBRC &kp MINUS &kp PLUS                 &trans  &trans   &trans   &trans   &trans
-        &kp GRAVE &kp LPAR &kp RPAR &kp SQT   &kp DQT                  &trans  &sk RSFT &sk RGUI &sk RALT &sk RCTL
-        &kp BSLH  &kp LBKT &kp RBKT &kp UNDER &kp EQUAL                &trans  &trans   &trans   &trans   &bootloader
-                                              &trans    &mo NUM &trans &trans
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp Q           &kp F           &kp P           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y           &kp SEMI
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp A           &kp R           &kp S           &kp T           &kp G                                           &kp M           &kp N           &kp E           &kp I           &kp O
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp Z           &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           &kp COMMA       &kp DOT         &kp FSLH
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————| */
+                                                                        &sk LSFT        &lt NAV BSPC    &lt NUM RET     &kp SPACE
+    /*                                                                 |———————————————|———————————————|———————————————|———————————————|                                                                 */
       >;
     };
     number_layer {
       label = "NUM";
       bindings = <
-        &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                  &kp N6    &kp N7   &kp N8   &kp N9   &kp N0
-        &sk LCTL &sk LALT &sk LGUI &sk LSFT &trans                  &trans    &sk RSFT &sk RGUI &sk RALT &sk RCTL
-        &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT               &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR
-                                            &trans    &trans &trans &trans
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp TAB         &kp TILDE       &kp LBRC        &kp RBRC        &kp DQT                                         &kp FSLH        &kp N7          &kp N8          &kp N9          &kp MINUS
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp ESC         &kp GRAVE       &kp LPAR        &kp RPAR        &kp SQT                                         &kp STAR        &kp N4          &kp N5          &kp N6          &kp PLUS
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp BSLH        &kp PIPE        &kp LBKT        &kp RBKT        &kp UNDER                                       &kp N0          &kp N1          &kp N2          &kp N3          &kp EQUAL
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————| */
+                                                                        &trans          &lt FUN BSPC    &trans          &kp DOT
+    /*                                                                 |———————————————|———————————————|———————————————|———————————————|                                                                 */
       >;
     };
-    mouse_layer {
-      label = "MOS";
+    navigation_layer {
+      label = "NAV";
       bindings = <
-        &trans &trans &trans &trans &trans                 &trans   &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &trans
-        &trans &trans &trans &trans &trans                 &trans   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans
-        &trans &trans &trans &trans &trans                 &trans   &msc SCRL_UP   &trans         &msc SCRL_DOWN  &trans
-                                    &trans &trans &mkp MB1 &mkp MB2
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp TAB         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_RIGHT                                 &kp FSLH        &kp N7          &kp N8          &kp N9          &kp BSPC
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp ESC         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN                                  &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RETS
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &trans          &mkp MB3        &mkp MB2        &mkp MB1        &trans                                          &kp HOME        &kp PG_DN       &kp PG_UP       &kp END         &trans
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————| */
+                                                                        &trans          &trans          &lt FUN RET     &trans
+    /*                                                                 |———————————————|———————————————|———————————————|———————————————|                                                                 */
       >;
     };
     function_layer {
       label = "FUN";
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                &kp F6  &kp F7 &kp F8 &kp F9 &kp F10
-        &trans &trans &trans &trans &kp F11               &kp F12 &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans                &trans  &trans &trans &trans &trans
-                                    &trans  &trans &trans &trans
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp C_BRI_UP    &kp F7          &kp F8          &kp F9          &kp F10                                         &trans          &trans          &bt BT_PRV      &bt BT_NXT      &bt BT_CLR
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &kp C_BRI_DN    &kp F4          &kp F5          &kp F1          &kp F11                                         &kp C_PREV      &kp C_VOL_DN    &kp C_VOL_UP    &kp C_NEXT      &kp C_PP
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
+        &bootloader     &kp F1          &kp F2          &kp F3          &kp F12                                         &trans          &kp C_MUTE      &to BASE        &to COLE        &bootloader
+    /* |———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————| */
+                                                                        &trans          &trans          &trans          &trans
+    /*                                                                 |———————————————|———————————————|———————————————|———————————————|                                                                 */
       >;
     };
   };

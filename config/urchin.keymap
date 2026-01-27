@@ -30,6 +30,27 @@
 / {
   combos {
     compatible = "zmk,combos";
+    combo_esc {
+      timeout-ms = <25>;
+      key-positions = <1 2 3>;
+      bindings = <&kp ESC>;
+    };
+    combo_tab {
+      timeout-ms = <25>;
+      key-positions = <21 22 23>;
+      bindings = <&kp TAB>;
+    };
+    combo_bspc {
+      timeout-ms = <25>;
+      key-positions = <6 7 8>;
+      bindings = <&kp BSPC>;
+    };
+    combo_ret {
+      timeout-ms = <25>;
+      key-positions = <26 27 28>;
+      bindings = <&kp RET>;
+    };
+    /* single mods */
     combo_lalt {
       timeout-ms = <25>;
       key-positions = <10 11>;
@@ -60,46 +81,47 @@
       key-positions = <18 19>;
       bindings = <&sk RALT>;
     };
-
+    /* double mods */
     combo_lalt_lctl {
       timeout-ms = <25>;
       key-positions = <10 11 12>;
-      bindings = <&sk LALT>, <&sk LCTL>;
+      bindings = <&sk LC(LALT)>;
     };
     combo_lalt_lgui {
       timeout-ms = <25>;
       key-positions = <10 11 13>;
-      bindings = <&sk LALT>, <&sk LGUI>;
+      bindings = <&sk LG(LALT)>;
     };
     combo_lctl_lgui {
       timeout-ms = <25>;
       key-positions = <11 12 13>;
-      bindings = <&sk LCTL>, <&sk LGUI>;
+      bindings = <&sk LG(LCTL)>;
     };
     combo_lalt_lctl_lgui {
       timeout-ms = <25>;
       key-positions = <10 11 12 13>;
-      bindings = <&sk LALT>, <&sk LCTL>, <&sk LGUI>;
+      bindings = <&sk LG(LC(LALT))>;
     };
     combo_ralt_rctl {
       timeout-ms = <25>;
       key-positions = <17 18 19>;
-      bindings = <&sk RALT>, <&sk RCTL>;
+      bindings = <&sk RA(RCTL)>;
     };
     combo_ralt_rgui {
       timeout-ms = <25>;
       key-positions = <16 18 19>;
-      bindings = <&sk RALT>, <&sk RGUI>;
+      bindings = <&sk RA(RGUI)>;
     };
     combo_rctl_rgui {
       timeout-ms = <25>;
       key-positions = <16 17 18>;
-      bindings = <&sk RCTL>, <&sk RGUI>;
+      bindings = <&sk RG(RCTL)>;
     };
+    /* triple mods */
     combo_ralt_rctl_rgui {
       timeout-ms = <25>;
       key-positions = <16 17 18 19>;
-      bindings = <&sk RALT>, <&sk RCTL>, <&sk RGUI>;
+      bindings = <&sk RG(RC(RALT))>;
     };
   };
 
@@ -115,7 +137,7 @@
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
         &kp Z           &kp X           &kp C           &kp V           &kp B                                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————| */
-                                                                        &sk LSFT        &lt NAV BSPC    &lt NUM RET     &kp SPACE
+                                                                        &mt LSFT SPACE  &lt NAV BSPC    &lt NUM RET     &mt RSFT SPACE
     /*                                                                 |———————————————|———————————————|———————————————|———————————————|                                                                 */
       >;
     };
@@ -129,7 +151,7 @@
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
         &kp Z           &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           &kp COMMA       &kp DOT         &kp FSLH
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————| */
-                                                                        &sk LSFT        &lt NAV BSPC    &lt NUM RET     &kp SPACE
+                                                                        &mt LSFT SPACE  &lt NAV BSPC    &lt NUM RET     &mt RSFT SPACE
     /*                                                                 |———————————————|———————————————|———————————————|———————————————|                                                                 */
       >;
     };
@@ -151,11 +173,11 @@
       label = "NAV";
       bindings = <
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
-        &kp TAB         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_RIGHT                                 &kp FSLH        &kp N7          &kp N8          &kp N9          &kp BSPC
+        &kp TAB         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp BSPC
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
-        &kp ESC         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN                                  &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
+        &kp ESC         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN                                  &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp RET
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
-        &trans          &mkp MB3        &mkp MB2        &mkp MB1        &trans                                          &kp HOME        &kp PG_DN       &kp PG_UP       &kp END         &trans
+        &trans          &mkp MB3        &mkp MB2        &mkp MB1        &trans                                          &trans          &kp BSPC        &kp RET         &kp DEL         &trans
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————| */
                                                                         &trans          &trans          &lt FUN RET     &trans
     /*                                                                 |———————————————|———————————————|———————————————|———————————————|                                                                 */
@@ -165,11 +187,11 @@
       label = "FUN";
       bindings = <
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
-        &kp C_BRI_UP    &kp F7          &kp F8          &kp F9          &kp F10                                         &trans          &trans          &bt BT_PRV      &bt BT_NXT      &bt BT_CLR
+        &trans          &kp F7          &kp F8          &kp F9          &kp F10                                         &bt BT_CLR      &kp C_PREV      &kp C_PP        &kp C_NEXT      &kp C_BRI_UP
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
-        &kp C_BRI_DN    &kp F4          &kp F5          &kp F1          &kp F11                                         &kp C_PREV      &kp C_VOL_DN    &kp C_VOL_UP    &kp C_NEXT      &kp C_PP
+        &trans          &kp F4          &kp F5          &kp F6          &kp F11                                         &bt BT_NXT      &kp C_VOL_DN    &kp C_VOL_UP    &kp C_MUTE      &kp C_BRI_DN
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|                               |———————————————|———————————————|———————————————|———————————————|———————————————| */
-        &bootloader     &kp F1          &kp F2          &kp F3          &kp F12                                         &trans          &kp C_MUTE      &to BASE        &to COLE        &bootloader
+        &bootloader     &kp F1          &kp F2          &kp F3          &kp F12                                         &bt BT_PRV      &trans          &to BASE        &to COLE        &bootloader
     /* |———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————|———————————————| */
                                                                         &trans          &trans          &trans          &trans
     /*                                                                 |———————————————|———————————————|———————————————|———————————————|                                                                 */

@@ -56,12 +56,12 @@
     compatible = "zmk,combos";
     /* mods */
     combo_lctl {
-      timeout-ms = <25>;
+      timeout-ms = <45>;
       key-positions = <10 11>;
       bindings = <&sk LCTL>;
     };
     combo_lalt {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <11 12>;
       bindings = <&sk LALT>;
     };
@@ -71,12 +71,12 @@
       bindings = <&sk LGUI>;
     };
     combo_rctl{
-      timeout-ms = <25>;
+      timeout-ms = <45>;
       key-positions = <18 19>;
       bindings = <&sk RCTL>;
     };
     combo_ralt {
-      timeout-ms = <25>;
+      timeout-ms = <35>;
       key-positions = <17 18>;
       bindings = <&sk RALT>;
     };

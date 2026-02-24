@@ -4,7 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: duckyb
       url-base: https://github.com/duckyb
-
   projects:
     - name: zmk
       remote: zmkfirmware

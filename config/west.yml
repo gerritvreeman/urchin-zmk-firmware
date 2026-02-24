@@ -2,15 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: duckyb
-      url-base: https://github.com/duckyb
+    - name: gerritvreeman
+      url-base: https://github.com/gerritvreeman
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: urchin-zmk-module
-      remote: duckyb
+      remote: gerritvreeman
       revision: main
   self:
     path: config

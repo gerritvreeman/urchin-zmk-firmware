@@ -20,11 +20,12 @@
 
 #define T_KEYS 30 31 32 33
 
-#define BASE 0
-#define COLE 1
-#define NUM 2
+#define COLEMAK 0
+#define QWERTY 1
+#define NUMSYM 2
 #define NAV 3
-#define FUN 4
+#define MOS 4
+#define FUN 5
 
 / {
   behaviors {
